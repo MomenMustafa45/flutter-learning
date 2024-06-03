@@ -12,15 +12,47 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(title: const Text("Title")),
 
+        // 1- text in body
         // Text widget and its styles => color - fontSize - fontWeight
         // backgroundColor
-        body: const Text(
-          "Hello world!",
-          style: TextStyle(
-              color: Colors.blue,
-              fontSize: 40.2,
-              fontWeight: FontWeight.bold,
-              backgroundColor: Colors.indigo),
+        // body: const Text(
+        //   "Hello world!",
+        //   style: TextStyle(
+        //       color: Colors.blue,
+        //       fontSize: 40.2,
+        //       fontWeight: FontWeight.bold,
+        //       backgroundColor: Colors.indigo),
+        // ),
+        // ==========================================
+        // 2- container
+        body: Center(
+          child: Container(
+            margin: const EdgeInsets.only(left: 20.0, right: 20.0),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+            width: 300,
+            height: 300,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+                color: Colors.red,
+                border: Border.all(color: Colors.black, width: 10),
+                borderRadius: const BorderRadius.all(Radius.circular(150)),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Colors.blue,
+                    offset: Offset(0, 0),
+                    spreadRadius: 5,
+                    blurRadius: 10,
+                  )
+                ]),
+            child: const Text(
+              "Hello World!",
+              style: TextStyle(
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.cyanAccent),
+            ),
+          ),
         ),
       ),
     );
